@@ -1,17 +1,28 @@
-# Проект: Место
+# Проект: Mesto - спринт 3
 
 ### Обзор
-
+* О проекте
 * Figma
-* Картинки
+* Стек и функциональность
+
+**Интро**
+
+Здесь будет проект о фотографиях.Задание для 4 спринта
 
 **Figma**
 
-* [Ссылка на макет в Figma](https://www.figma.com/file/2cn9N9jSkmxD84oJik7xL7/JavaScript.-Sprint-4?node-id=0%3A1)
+* [Ссылка на макет в Figma](https://www.figma.com/file/2cn9N9jSkmxD84oJik7xL7/JavaScript.-Sprint-4?type=design&node-id=28212-155&t=xdtbMv4ppwTLUHE3-0)
 
-**Картинки**
+**Стек и функциональность**
 
-Доставать картинки предстоит из Фигмы. Это расхожая практика, поэтому полезно потренироваться.
-Не забудьте [оптимизировать картинки](https://tinypng.com/), чтобы ваш сайт загружался быстрее.
+Grid-layout
+Позиционирование блоков и элементов
+Адаптивная верстка
+БЭМ Nested
+HTML
+CSS
+Flexbox
+Псевдоклассы CSS
+JavaScript
 
-Удачи!
+* [Ссылка на проект](https://kateitsme.github.io/mesto/)
