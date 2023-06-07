@@ -1,26 +1,11 @@
 .profile__photo {
-  margin-right: 30px;
-  width: 120px;
-  height: 120px;
+  max-width: 120px;
   border-radius: 50%;
-  background-image: url(../../../images/profile-img.jpg);
-  background-size: cover;
-  background-position: center;
 }
 
-@media screen and (max-width: 580px) {
-  .profile__photo {
-    width: 80px;
-    height: 80px;
-  }
-}
-
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 700px) {
   .profile__photo {
     margin-right: 0;
-    margin-bottom: 26px;
-    align-self: center;
-    width: 120px;
-    height: 120px;
+    margin-bottom: 25px;
   }
 }

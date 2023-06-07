@@ -1,13 +1,15 @@
 .profile {
-  margin-bottom: 50px;
+  width: 100%;
   display: flex;
-  margin-top: 40px;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-top: 40px;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 800px) {
   .profile {
-    margin-bottom: 36px;
     flex-direction: column;
-    margin-top: 38.25px;
+    align-items: center;
+    position: relative;
   }
 }
