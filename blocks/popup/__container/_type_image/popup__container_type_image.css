@@ -1,0 +1,24 @@
+.popup__container_type_image {
+  background-color: transparent;
+  position: absolute;
+  top: calc(50% - 150px);
+  left: calc(50% - 120px);
+  margin: 0 auto;
+  padding: 0;
+  width: 240px;
+}
+
+@media screen and (min-width: 800px) {
+  .popup__container_type_image {
+  top: calc(50% - 270px);
+  left: calc(50% - 220px);
+  width: 433px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .popup__container_type_image {
+  left: calc(50% - 400px);
+  width: 816px;
+  }
+}
