@@ -1,4 +1,4 @@
-# Проект: Mesto - спринт 3
+# Проект: Mesto - спринт 5
 
 ### Обзор
 * О проекте
@@ -7,11 +7,11 @@
 
 **Интро**
 
-Здесь будет проект о фотографиях.Задание для 4 спринта
+Здесь будет проект о фотографиях.Задание для 5 спринта
 
 **Figma**
 
-* [Ссылка на макет в Figma](https://www.figma.com/file/2cn9N9jSkmxD84oJik7xL7/JavaScript.-Sprint-4?type=design&node-id=28212-155&t=xdtbMv4ppwTLUHE3-0)
+* [Ссылка на макет в Figma](https://www.figma.com/file/bjyvbKKJN2naO0ucURl2Z0/JavaScript.-Sprint-5?type=design&node-id=50160-2&t=FtrgQZ5RZ3rGgwz0-0)
 
 **Стек и функциональность**
 
