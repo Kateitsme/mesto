@@ -9,10 +9,10 @@ const addBtn = document.querySelector('.profile__add-button');
 
 // profile edit popup
 const popupProfileClose = popupProfile.querySelector('.popup__close-btn');
-const popupProfileSave = popupProfile.querySelector('.form__submit-btn');
+const popupProfileSave = popupProfile.querySelector('.popup__submit-btn');
 const popupProfileForm = popupProfile.querySelector('.popup__form');
-const popupProfileName = popupProfile.querySelector('.form__input_type_name');
-const popupProfileJob = popupProfile.querySelector('.form__input_type_job');
+const popupProfileName = popupProfile.querySelector('.popup__input_type_name');
+const popupProfileJob = popupProfile.querySelector('.popup__input_type_job');
 
 //profile on page
 const profile = document.querySelector('.profile');
@@ -21,10 +21,10 @@ const profileJob = profile.querySelector('.profile__job');
 
 //new element popup
 const popupNewElementClose = popupNewElement.querySelector('.popup__close-btn');
-const popupNewElementSave = popupNewElement.querySelector('.form__submit-btn');
+const popupNewElementSave = popupNewElement.querySelector('.popup__submit-btn');
 const popupNewElementForm = popupNewElement.querySelector('.popup__form');
-const popupNewElementName = popupNewElement.querySelector('.form__input_type_place');
-const popupNewElementLink = popupNewElement.querySelector('.form__input_type_link');
+const popupNewElementName = popupNewElement.querySelector('.popup__input_type_name');
+const popupNewElementLink = popupNewElement.querySelector('.popup__input_type_link');
 
 //image popup
 const popupImageClose = popupImage.querySelector('.popup__close-btn');

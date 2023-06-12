@@ -1,9 +1,9 @@
 const config = {
   formSelector: '.popup__form',
-  inputSelector: '.form__input',
-  submitButtonSelector: '.form__submit-btn',
-  inputErrorClass: 'form__input_type_error',
-  errorClass: 'form__input-error_active'
+  inputSelector: '.popup__input',
+  submitButtonSelector: '.popup__submit-btn',
+  inputErrorClass: 'popup__input_type_error',
+  errorClass: 'popup__input-error_active'
 };
 const showInputError = (config, inputElement, errorElement, errorMessage) => {
   inputElement.classList.add(config.inputErrorClass);
