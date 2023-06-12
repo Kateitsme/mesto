@@ -68,7 +68,6 @@ const closePopup = item => {
 };
 //close by esc
 const closePopupEsc = evt => {
-  evt.preventDefault();
   if (evt.key === 'Escape') {
     const openedPopup = document.querySelector('.popup_opened');
     closePopup(openedPopup);
@@ -152,10 +151,6 @@ function setEventListenersOnPopups() {
   popupProfile.addEventListener('click', closePopupClick);
   popupNewElement.addEventListener('click', closePopupClick);
   popupImage.addEventListener('click', closePopupClick);
-
-  popupProfile.addEventListener('keydown', closePopupEsc);
-  popupNewElement.addEventListener('keydown', closePopupEsc);
-  popupImage.addEventListener('keydown', closePopupEsc);
 }
 
 setEventListenersOnPopups();

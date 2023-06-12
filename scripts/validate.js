@@ -27,11 +27,9 @@ const checkInputValidity = (config, inputElement, errorElement) => {
 
 const setEventListeners = (config, formElement, submitButtonElement) => {
   const inputList = Array.from(formElement.querySelectorAll(config.inputSelector));
-
+  submitButtonElement.setAttribute('disabled', true);
   inputList.forEach((inputElement) => {
     const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
-    submitButtonElement.setAttribute('disabled', true);
-
     inputElement.addEventListener('input', () => {
       checkInputValidity(config, inputElement, errorElement);
       toggleButtonState(config, inputList, submitButtonElement);
@@ -44,11 +42,6 @@ const enableValidation = (config) => {
 
   formList.forEach((formElement) => {
     const submitButtonElement = formElement.querySelector(config.submitButtonSelector);
-
-    formElement.addEventListener('submit', (evt) => {
-      evt.preventDefault();
-    });
-
     setEventListeners(config, formElement, submitButtonElement);
   });
 };

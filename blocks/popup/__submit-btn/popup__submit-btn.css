@@ -1,15 +1,15 @@
 .popup__submit-btn {
-  display: block;
-  width: 358px;
-  height: 50px;
+  padding: 0;
+  margin-top: 18px;
   border: none;
   border-radius: 2px;
-  margin: 47px auto 37px;
+  color: inherit;
+  font-weight: 400;
   background-color: #000;
   font-size: 18px;
   line-height: 22px;
-  color: #fff;
-  cursor: pointer;
+  width: 358px;
+  height: 50px;
 }
 
 .popup__submit-btn:hover {
@@ -25,14 +25,14 @@
   color: #000;
   border: 1px solid #000;
   background-color: #fff;
+  cursor: default;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 800px) {
   .popup__submit-btn {
     font-size: 14px;
     line-height: 17px;
     width: 238px;
     height: 46px;
-    margin: 51px auto 25px;
   }
 }
