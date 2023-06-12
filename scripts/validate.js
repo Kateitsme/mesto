@@ -59,7 +59,6 @@ const hasInvalidInput = (inputList) => {
   });
 };
 
-// В зависимости от валидации делает кнопку отправки формы активной или неактивной
 const toggleButtonState = (config, inputList, submitButtonElement) => {
   if (hasInvalidInput(inputList)) {
     submitButtonElement.setAttribute('disabled', true);
