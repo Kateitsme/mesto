@@ -1,7 +1,7 @@
 import {
   popupProfile, editBtn, popupProfileClose, popupProfileForm, popupProfileName, popupProfileJob, profileName,
   profileJob, popupNewElementLink, popupNewElementName, config, elements, popupNewElementForm, popupNewElementClose,
-  addBtn, popupImage, popupNewElement, initialCards, popupImageImg, popupImageFigcaption
+  addBtn, popupImage, popupNewElement, initialCards, popupImageImg, popupImageFigcaption, popupImageClose
 } from './const.js';
 import { Card } from './Card.js';
 import { FormValidator } from './FormValidator.js';
@@ -86,9 +86,13 @@ function setEventListenersOnPopups() {
     closePopup(popupNewElement);
   });
 
-  popupProfile.addEventListener('click', closePopupClick);
-  popupNewElement.addEventListener('click', closePopupClick);
-  popupImage.addEventListener('click', closePopupClick);
+  popupImageClose.addEventListener('click', () => {
+    closePopup(popupImage);
+  });
+
+  popupProfile.addEventListener('mousedown', closePopupClick);
+  popupNewElement.addEventListener('mousedown', closePopupClick);
+  popupImage.addEventListener('mousedown', closePopupClick);
 
   popupNewElementForm.addEventListener('submit', (evt) => {
     evt.preventDefault();
