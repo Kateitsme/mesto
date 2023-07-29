@@ -1,13 +1,12 @@
-import { popupImageImg, popupImageFigcaption, popupImage, popupImageClose } from './const.js';
-
 export class Card {
-  constructor(name, link, cardSelector, openPopup, closePopup) {
+  constructor(name, link, cardSelector, openPopup, closePopup, handleOpenPopup) {
     this._container = document.querySelector(cardSelector);
     this._name = name;
     this._link = link;
     this._cardSelector = cardSelector;
     this._openPopup = openPopup;
     this._closePopup = closePopup;
+    this._handleOpenPopup= handleOpenPopup;
   }
 
   _getTemplate() {
@@ -21,8 +20,7 @@ export class Card {
   }
 
   _handleLikeCard() {
-    const likeBtn = this._element.querySelector('.element__like-btn');
-    likeBtn.classList.toggle('element__like-btn_active');
+    this._likeBtn.classList.toggle('element__like-btn_active');
   }
 
   _handleDeleteCard() {
@@ -30,44 +28,28 @@ export class Card {
     this._element = null;
   }
 
-  _handleOpenPopup() {
-    popupImageFigcaption.textContent = this._name;
-    popupImageImg.src = this._link;
-    popupImageImg.alt = `${this._name}`;
-    this._openPopup(popupImage);
-  }
-
-  _handleClosePopup() {
-    popupImageFigcaption.textContent = '';
-    popupImageImg.src = '';
-    popupImageImg.alt = '';
-    this._closePopup(popupImage)
-  }
-
   _setEventListeners() {
-    this._element.querySelector('.element__img').addEventListener('click', () => {
-      this._handleOpenPopup();
-    })
-
-    popupImageClose.addEventListener('click', () => {
-      this._handleClosePopup();
-    })
+    this._imgCard.addEventListener('click', () =>{
+      this._handleOpenPopup(this._name, this._link)
+    });
 
     this._element.querySelector('.element__del-btn').addEventListener('click', () => {
       this._handleDeleteCard();
     })
 
-    this._element.querySelector('.element__like-btn').addEventListener('click', () => {
+    this._likeBtn.addEventListener('click', () => {
       this._handleLikeCard();
     })
   }
 
   generateCard() {
     this._element = this._getTemplate();
+    this._likeBtn = this._element.querySelector('.element__like-btn');
+    this._imgCard = this._element.querySelector('.element__img');
     this._setEventListeners();
 
-    this._element.querySelector('.element__img').src = this._link;
-    this._element.querySelector('.element__img').alt = this._name;
+    this._imgCard.src = this._link;
+    this._imgCard.alt = this._name;
     this._element.querySelector('.element__title').textContent = this._name;
 
     return this._element;

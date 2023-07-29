@@ -1,7 +1,7 @@
 import {
   popupProfile, editBtn, popupProfileClose, popupProfileForm, popupProfileName, popupProfileJob, profileName,
   profileJob, popupNewElementLink, popupNewElementName, config, elements, popupNewElementForm, popupNewElementClose,
-  addBtn, popupImage, popupNewElement, initialCards
+  addBtn, popupImage, popupNewElement, initialCards, popupImageImg, popupImageFigcaption
 } from './const.js';
 import { Card } from './Card.js';
 import { FormValidator } from './FormValidator.js';
@@ -26,10 +26,8 @@ const handleEscUp = (event) => {
 };
 
 const closePopupClick = evt => {
-  const openedPopup = document.querySelector('.popup_opened');
-  const closeBtn = openedPopup.querySelector('.popup__close-btn');
-  if (evt.target.contains(closeBtn)) {
-    closePopup(openedPopup);
+  if (evt.target.classList.contains('popup')) {
+    closePopup(evt.target);
   };
 };
 
@@ -47,16 +45,26 @@ function submitEditFormHandler(evt) {
   closePopup(popupProfile);
 }
 
-const addCard = (name, link) => {
-  const card = new Card(name, link, '.template', openPopup, closePopup).generateCard();
-  elements.prepend(card);
-};
+function renderCard (elements, name, link) {
+  elements.prepend(addCard(name, link));
+}
 
-const renderInitialCards = (array) => {
-  array.forEach((item) => {
-    addCard(item.name, item.link);
-  })
-};
+/** Функция создает новый элемент карточки по ее содержанию */
+function addCard (name, link) {
+  const card = new Card(name, link, '.template', openPopup, closePopup, handleOpenPopup);
+  return card.generateCard();
+}
+
+/** Отобразить исходные карточки при загрузке страницы */
+initialCards.forEach(card => renderCard (elements, card.name, card.link));
+
+function handleOpenPopup(name, link) {
+
+  popupImageFigcaption.textContent = name;
+  popupImageImg.src = link;
+  popupImageImg.alt = `${name}`;
+  openPopup(popupImage);
+}
 
 function setEventListenersOnPopups() {
   editBtn.addEventListener('click', () => {
@@ -84,7 +92,7 @@ function setEventListenersOnPopups() {
 
   popupNewElementForm.addEventListener('submit', (evt) => {
     evt.preventDefault();
-    addCard(popupNewElementName.value, popupNewElementLink.value);
+    renderCard(elements, popupNewElementName.value, popupNewElementLink.value);
     popupNewElementName.value = '';
     popupNewElementLink.value = '';
     closePopup(popupNewElement);
@@ -93,8 +101,6 @@ function setEventListenersOnPopups() {
 }
 
 setEventListenersOnPopups();
-
-renderInitialCards(initialCards);
 
 const popupProfileFormValidator = new FormValidator(config, popupProfileForm);
 popupProfileFormValidator.enableValidation();
