@@ -51,7 +51,7 @@ function renderCard (elements, name, link) {
 
 /** Функция создает новый элемент карточки по ее содержанию */
 function addCard (name, link) {
-  const card = new Card(name, link, '.template', openPopup, closePopup, handleOpenPopup);
+  const card = new Card(name, link, '.template', handleOpenPopup);
   return card.generateCard();
 }
 
@@ -100,7 +100,6 @@ function setEventListenersOnPopups() {
     popupNewElementName.value = '';
     popupNewElementLink.value = '';
     closePopup(popupNewElement);
-    popupNewElementFormValidator.toggleButtonState();
   });
 }
 

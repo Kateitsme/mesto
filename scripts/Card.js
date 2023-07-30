@@ -1,11 +1,9 @@
 export class Card {
-  constructor(name, link, cardSelector, openPopup, closePopup, handleOpenPopup) {
+  constructor(name, link, cardSelector, handleOpenPopup) {
     this._container = document.querySelector(cardSelector);
     this._name = name;
     this._link = link;
     this._cardSelector = cardSelector;
-    this._openPopup = openPopup;
-    this._closePopup = closePopup;
     this._handleOpenPopup= handleOpenPopup;
   }
 
