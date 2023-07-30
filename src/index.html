@@ -3,8 +3,10 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="./pages/index.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Ефремова Екатерина">
+  <meta name="keywords" content="HTML, CSS, JavaScript, Mesto">
+  <meta name="description" content="сервис Mesto, веб-разработчик Ефремова Екатерина">
   <link rel="shortcut icon" href="./images/favicon.ico">
   <title>Проект: Место</title>
 </head>
@@ -12,11 +14,11 @@
 <body class="root">
   <div class="page">
     <header class="header">
-      <img src="images/Mesto_logo.svg" alt="Место лого" class="header__logo">
+      <img src="<%=require('./images/Mesto_logo.svg')%>" alt="Место лого" class="header__logo">
     </header>
     <main class="content">
       <section class="profile">
-        <img class="profile__photo" alt="Фото профиля" src="images/profile_photo.jpg">
+        <img class="profile__photo" alt="Фото профиля" src="<%=require('./images/profile_photo.jpg')%>">
         <div class="profile__info">
           <button type="button" aria-label="Кнопка редактирования профиля" class="profile__edit-button"></button>
           <h1 class="profile__name">Жак-Ив Кусто</h1>
@@ -54,7 +56,7 @@
       <div class="popup__container">
         <div class="popup__content">
         <h2 class="popup__title">Новое место</h2>
-        <form name="edit-form" method="GET" action="#" class="popup__form" novalidate>
+        <form name="card-form" method="GET" action="#" class="popup__form" novalidate>
           <label class="popup__input-area">
           <input id="place-input" type="text" name="name" placeholder="Название" class="popup__input popup__input_type_name" minlength="2" maxlength="30" required>
           <span id="place-input-error" class="popup__input-error place-input-error"></span>
@@ -78,7 +80,7 @@
       </figure>
     </div>
 
-    <template class="template">
+    <template id="template">
       <article class="element">
         <img class="element__img" src="#" alt="">
         <button type="button" class="element__del-btn"></button>
@@ -88,7 +90,6 @@
         </div>
       </article>
     </template>
-    <script type="module" src="./scripts/index.js"></script>
 </body>
 
 </html>
