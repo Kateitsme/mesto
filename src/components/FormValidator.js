@@ -42,6 +42,10 @@ export default class FormValidator {
     }
   };
 
+  disableButton() {
+    this._buttonElement.setAttribute('disabled', true);
+  }
+
   _setEventListeners() {
     this._toggleButtonState();
 
